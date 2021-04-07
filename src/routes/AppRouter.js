@@ -6,14 +6,16 @@ import {
 } from "react-router-dom";
 import LoginScreen from '../components/login/LoginScreen';
 import DashboardRoutes from './DashboardRoutes';
+import PrivateRouter from './PrivateRouter';
 
 const AppRouter = () => {
+
   return (
     <Router>
       <div>
         <Switch>
           <Route path="/login" component={LoginScreen} />
-          <Route path="/" component={DashboardRoutes} />
+          <PrivateRouter path="/" component={DashboardRoutes} />
         </Switch>
       </div>
     </Router>

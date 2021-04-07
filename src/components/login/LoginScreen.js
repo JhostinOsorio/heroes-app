@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { useHistory } from 'react-router';
+import AuthContext from '../../auth/AuthContext';
+import { types } from '../../types/types';
 
-const LoginScreen = ({ history }) => {
+const LoginScreen = () => {
+
+  const history = useHistory();
+  const {dispatch } = useContext(AuthContext)
 
   const handleLogin = () => {
+    dispatch({
+      type: types.login,
+      payload: {
+        name: 'Jhostin',
+        logged: true
+      }
+    })
     history.replace('/');
   }
 
